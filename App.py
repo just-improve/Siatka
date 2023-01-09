@@ -24,7 +24,8 @@ class App(tk.Tk):
         # set the controller to view
         view.set_controller(controller)
 
-        controller.creating_players_from_csv()
+        controller.create_list_of_players()
+
 
 
 if __name__ == '__main__':

@@ -63,7 +63,7 @@ if __name__ == '__main__':
                 sum1, sum2 = Player.sum_lis(team1, team2)
                 print(sum1)
                 print(sum2)
-                if abs(sum1-sum2) < 50:
+                if abs(sum1-sum2) < 30:
                     equal_teams = True
                     let_attemtp = False
                     print('Składy są równe')
