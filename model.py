@@ -26,7 +26,6 @@ class Player:
         sum_of_skills = self.blok + self.atak + self.odbior + self.serwis + self.wystawa + self.sytuacyjne
         return sum_of_skills
 
-
     @property
     def get_name(self):
         return self.name
@@ -47,6 +46,21 @@ class Player:
         for y in team2:
             sum2 += y.sum_of_skills
         return sum1, sum2
+
+    @staticmethod
+    def check_wes_mz(team):
+        mz = False
+        wes = False
+        both_play = False
+        for x in team:
+            if x.name == 'Krzysztof Wesołowski':
+                wes = True
+            elif x.name == 'Marcin Zapała':
+                mz = True
+
+        if mz is True and wes is True:
+            both_play = True
+        return both_play
 
 
 

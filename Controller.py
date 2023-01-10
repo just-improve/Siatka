@@ -73,19 +73,28 @@ class Controller:
                     team2.append(player)
                     first_team = True
 
+
                 if len(copy_li_players) == 0:
 
+                    wes_mz1 = Player.check_wes_mz(team1)
+                    wes_mz2 = Player.check_wes_mz(team2)
+                    print(wes_mz1)
+                    print(wes_mz2)
+
                     sum1, sum2 = Player.sum_teams(team1, team2)
-                    print(sum1)
-                    print(sum2)
-                    if abs(sum1 - sum2) < 30:
+                    if wes_mz1 is True or wes_mz2 is True:
+                        equal_teams = False
+                        let_attemtp = False
+                        print('Wesoly z marcinem ')
+
+                    elif abs(sum1 - sum2) < 30:
                         equal_teams = True
                         let_attemtp = False
-                        print('Składy są równe')
+                        # print('Składy są równe')
                     else:
                         equal_teams = False
                         let_attemtp = False
-                        print('za duża różnica sił ' + str(abs(sum1 - sum2)))
+                        # print('za duża różnica sił ' + str(abs(sum1 - sum2)))
         for x in team1:
             print(x.name)
 
@@ -112,9 +121,13 @@ class Controller:
         for x in self.model.team2:
             team2_as_str += x.name + '\n'
 
-        tream_joned_str = 'Team1 \n' + str(self.model.team1_sum_skills) + '\n' + team1_as_str + '\n'  + 'Team2 \n' + str(self.model.team2_sum_skills) + '\n' + team2_as_str
+        # tream_joned_str = 'Team1 \n' + str(self.model.team1_sum_skills) + '\n' + team1_as_str + '\n'  + 'Team2 \n' + str(self.model.team2_sum_skills) + '\n' + team2_as_str
+        tream_joned_str = 'Team1 \n' + '\n' + team1_as_str + '\n'  + 'Team2 \n' + '\n' + team2_as_str
 
         return tream_joned_str
+
+
+
 
 
 

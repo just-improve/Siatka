@@ -28,15 +28,15 @@ class View(ttk.Frame):
 
         self.marcin_z_int_var = tk.IntVar()
         self.marcin_z_int_var.set(1)
-        ttk.Checkbutton(self, text='Marcin Zapałą', variable=self.marcin_z_int_var, onvalue=1, offvalue=0).grid(row=6, column=1)
+        ttk.Checkbutton(self, text='Marcin Zapała', variable=self.marcin_z_int_var, onvalue=1, offvalue=0).grid(row=6, column=1)
 
         self.pawel_z_int_var = tk.IntVar()
         self.pawel_z_int_var.set(1)
-        ttk.Checkbutton(self, text='Paweł Zapałą', variable=self.pawel_z_int_var, onvalue=1, offvalue=0).grid(row=7, column=1)
+        ttk.Checkbutton(self, text='Paweł Zapała', variable=self.pawel_z_int_var, onvalue=1, offvalue=0).grid(row=7, column=1)
 
         self.krzys_z_int_var = tk.IntVar()
         self.krzys_z_int_var.set(1)
-        ttk.Checkbutton(self, text='Krzysztof Zapałą', variable=self.krzys_z_int_var, onvalue=1, offvalue=0).grid(row=8, column=1)
+        ttk.Checkbutton(self, text='Krzysztof Zapała', variable=self.krzys_z_int_var, onvalue=1, offvalue=0).grid(row=8, column=1)
 
         self.krzys_w_int_var = tk.IntVar()
         self.krzys_w_int_var.set(1)
