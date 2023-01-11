@@ -51,8 +51,6 @@ class Controller:
                 if x in self.model.list_of_checked_players:
                     self.model.list_of_checked_players.remove(x)
 
-        # for y in self.model.list_of_checked_players:
-        #     print(y.name)
 
     def create_teams_from_checked_players(self):
         equal_teams = False
@@ -107,11 +105,6 @@ class Controller:
         self.model.team1_sum_skills = Player.sum_team_skills(self.model.team1)
         self.model.team2_sum_skills = Player.sum_team_skills(self.model.team2)
 
-
-    def display_teams(self):
-        teams_joned_str = self.change_teams_to_string()
-        self.view.display_teams(teams_joned_str)
-
     def change_teams_to_string(self):
         team1_as_str = ''
         team2_as_str = ''
@@ -125,6 +118,10 @@ class Controller:
         tream_joned_str = 'Team1 \n' + '\n' + team1_as_str + '\n'  + 'Team2 \n' + '\n' + team2_as_str
 
         return tream_joned_str
+
+    def display_teams(self):
+        teams_joned_str = self.change_teams_to_string()
+        self.view.display_teams(teams_joned_str)
 
 
 
