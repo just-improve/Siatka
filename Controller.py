@@ -11,36 +11,62 @@ class Controller:
 
     def create_list_of_players(self):
 
-        wj = Player('Wieslaw', 9, 9, 9, 9, 9, 9, self.view.wj_int_var)
+        wj = Player('Wieslaw', 450, self.view.wj_int_var)
         self.model.list_of_players.append(wj)
 
-        gizzu = Player('Gizzu', 8, 8, 8, 8, 8, 8, self.view.gizzu_int_var)
+        gizzu = Player('Gizzu', 430, self.view.gizzu_int_var)
         self.model.list_of_players.append(gizzu)
 
-        kamil = Player('Kamil', 4, 4, 4, 4, 4, 4, self.view.kamil_int_var)
+        kamil = Player('Kamil', 320, self.view.kamil_int_var)
         self.model.list_of_players.append(kamil)
 
-        sylwek_kolda = Player('Sylwek Kołda', 6, 6, 6, 6, 6, 6, self.view.sylwek_k_int_var)
+        sylwek_kolda = Player('Sylwek Kołda', 375, self.view.sylwek_k_int_var)
         self.model.list_of_players.append(sylwek_kolda)
 
-        robert_zapala = Player('Robert Zapała', 6, 6, 6, 6, 6, 6, self.view.robert_z_int_var)
+        robert_zapala = Player('Robert Zapała', 405, self.view.robert_z_int_var)
         self.model.list_of_players.append(robert_zapala)
 
-        marcin_zapala = Player('Marcin Zapała', 6, 6, 6, 6, 6, 6, self.view.marcin_z_int_var)
+        marcin_zapala = Player('Marcin Zapała', 295, self.view.marcin_z_int_var)
         self.model.list_of_players.append(marcin_zapala)
 
-        pawel_zapala = Player('Paweł Zapała', 6, 6, 6, 6, 6, 6, self.view.pawel_z_int_var)
+        pawel_zapala = Player('Paweł Zapała', 328, self.view.pawel_z_int_var)
         self.model.list_of_players.append(pawel_zapala)
 
-        krzysztof_zapala = Player('Krzysztof Zapała', 6, 6, 6, 6, 6, 6, self.view.krzys_z_int_var)
+        krzysztof_zapala = Player('Krzysztof Zapała', 340, self.view.krzys_z_int_var)
         self.model.list_of_players.append(krzysztof_zapala)
 
-        krzysztof_wesolowski = Player('Krzysztof Wesołowski', 6, 6, 6, 6, 6, 6, self.view.krzys_w_int_var)
+        krzysztof_wesolowski = Player('Krzysztof Wesołowski', 310, self.view.krzys_w_int_var)
         self.model.list_of_players.append(krzysztof_wesolowski)
 
-        tomek = Player('Tomek', 6, 6, 6, 6, 6, 6, self.view.tomek_int_var)
+        tomek = Player('Tomek', 400, self.view.tomek_int_var)
         self.model.list_of_players.append(tomek)
+########################################################################################################
+        marcin_janik = Player('Marcin Janik', 413, self.view.marcin_j_int_var)
+        self.model.list_of_players.append(marcin_janik)
 
+        przemek = Player('Przemek', 455, self.view.przemek_int_var)
+        self.model.list_of_players.append(przemek)
+
+        piotr_socha = Player('Piotr Socha', 408, self.view.piotr_s_int_var)
+        self.model.list_of_players.append(piotr_socha)
+
+        albert = Player('Albert', 379, self.view.albert_int_var)
+        self.model.list_of_players.append(albert)
+
+        sebastian = Player('Sebastian', 359, self.view.sebastian_int_var)
+        self.model.list_of_players.append(sebastian)
+
+        grzegorz_sokolowski = Player('Grzegorz Sokolowski', 275, self.view.grzegorz_s_int_var)
+        self.model.list_of_players.append(grzegorz_sokolowski)
+
+        zbyszek_staniec = Player('Zbyszek Staniec', 325, self.view.zbyszek_staniec_int_var)
+        self.model.list_of_players.append(zbyszek_staniec)
+
+        zbychu_stefanski = Player('Zbychu Stefanski', 395, self.view.zbychu_s_int_var)
+        self.model.list_of_players.append(zbychu_stefanski)
+
+        grzegorz_polanowski = Player('Grzegorz Polanowski', 415, self.view.grzegorz_p_int_var)
+        self.model.list_of_players.append(grzegorz_polanowski)
 
     def create_list_of_checked_players(self):
         for x in self.model.list_of_players:
@@ -50,7 +76,6 @@ class Controller:
             if x.int_var.get() == 0:
                 if x in self.model.list_of_checked_players:
                     self.model.list_of_checked_players.remove(x)
-
 
     def create_teams_from_checked_players(self):
         equal_teams = False
@@ -71,7 +96,6 @@ class Controller:
                     team2.append(player)
                     first_team = True
 
-
                 if len(copy_li_players) == 0:
 
                     wes_mz1 = Player.check_wes_mz(team1)
@@ -85,14 +109,14 @@ class Controller:
                         let_attemtp = False
                         print('Wesoly z marcinem ')
 
-                    elif abs(sum1 - sum2) < 30:
+                    elif abs(sum1 - sum2) < self.model.allow_diff_amount:
                         equal_teams = True
                         let_attemtp = False
-                        # print('Składy są równe')
+                        print('Składy są równe')
                     else:
                         equal_teams = False
                         let_attemtp = False
-                        # print('za duża różnica sił ' + str(abs(sum1 - sum2)))
+                        print('za duża różnica sił ' + str(abs(sum1 - sum2)))
         for x in team1:
             print(x.name)
 
@@ -102,8 +126,7 @@ class Controller:
         self.model.team1 = team1
         self.model.team2 = team2
 
-        self.model.team1_sum_skills = Player.sum_team_skills(self.model.team1)
-        self.model.team2_sum_skills = Player.sum_team_skills(self.model.team2)
+        self.model.team1_sum_skills, self.model.team2_sum_skills = Player.sum_teams(self.model.team1, self.model.team2)
 
     def change_teams_to_string(self):
         team1_as_str = ''
@@ -114,8 +137,8 @@ class Controller:
         for x in self.model.team2:
             team2_as_str += x.name + '\n'
 
-        # tream_joned_str = 'Team1 \n' + str(self.model.team1_sum_skills) + '\n' + team1_as_str + '\n'  + 'Team2 \n' + str(self.model.team2_sum_skills) + '\n' + team2_as_str
-        tream_joned_str = 'Team1 \n' + '\n' + team1_as_str + '\n'  + 'Team2 \n' + '\n' + team2_as_str
+        tream_joned_str = 'Team1 \n' + str(self.model.team1_sum_skills) + '\n' + team1_as_str + '\n'  + 'Team2 \n' + str(self.model.team2_sum_skills) + '\n' + team2_as_str
+        # tream_joned_str = 'Team1 \n' + '\n' + team1_as_str + '\n'  + 'Team2 \n' + '\n' + team2_as_str
 
         return tream_joned_str
 
