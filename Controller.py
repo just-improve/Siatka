@@ -109,7 +109,7 @@ class Controller:
                         let_attemtp = False
                         # print('Wesoly z marcinem ')
 
-                    elif abs(sum1 - sum2) < self.model.allow_diff_amount:
+                    elif abs(sum1 - sum2) < int(self.view.e_allow_value.get()):  #self.model.allow_diff_amount:
                         equal_teams = True
                         let_attemtp = False
                         print('Składy są równe')
