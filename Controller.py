@@ -100,14 +100,14 @@ class Controller:
 
                     wes_mz1 = Player.check_wes_mz(team1)
                     wes_mz2 = Player.check_wes_mz(team2)
-                    print(wes_mz1)
-                    print(wes_mz2)
+                    # print(wes_mz1)
+                    # print(wes_mz2)
 
                     sum1, sum2 = Player.sum_teams(team1, team2)
                     if wes_mz1 is True or wes_mz2 is True:
                         equal_teams = False
                         let_attemtp = False
-                        print('Wesoly z marcinem ')
+                        # print('Wesoly z marcinem ')
 
                     elif abs(sum1 - sum2) < self.model.allow_diff_amount:
                         equal_teams = True
