@@ -115,8 +115,6 @@ class View(ttk.Frame):
             row=20,
             column=1)
 
-
-
         # save button
         self.save_button = ttk.Button(self, text='Losuj', command=self.losuj_i_pokaz_teamy)
         self.save_button.grid(row=2, column=3, padx=10)
