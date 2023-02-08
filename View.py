@@ -15,11 +15,11 @@ class View(ttk.Frame):
 
         self.wj_int_var = tk.IntVar()
         self.wj_int_var.set(0)
-        ttk.Checkbutton(self, text='Wj', variable=self.wj_int_var, onvalue=1, offvalue=0).grid(row=1, column=1)
+        ttk.Checkbutton(self, text='Wiesław', variable=self.wj_int_var, onvalue=1, offvalue=0).grid(row=1, column=1)
 
         self.gizzu_int_var = tk.IntVar()
         self.gizzu_int_var.set(0)
-        ttk.Checkbutton(self, text='Gizzu', variable=self.gizzu_int_var, onvalue=1, offvalue=0).grid(row=2, column=1)
+        ttk.Checkbutton(self, text='Michał Guzik', variable=self.gizzu_int_var, onvalue=1, offvalue=0).grid(row=2, column=1)
 
         self.sylwek_k_int_var = tk.IntVar()
         self.sylwek_k_int_var.set(0)
@@ -27,7 +27,7 @@ class View(ttk.Frame):
 
         self.kamil_int_var = tk.IntVar()
         self.kamil_int_var.set(0)
-        ttk.Checkbutton(self, text='Kamil', variable=self.kamil_int_var, onvalue=1, offvalue=0).grid(row=4, column=1)
+        ttk.Checkbutton(self, text='Kamil Michalski', variable=self.kamil_int_var, onvalue=1, offvalue=0).grid(row=4, column=1)
 
         self.robert_z_int_var = tk.IntVar()
         self.robert_z_int_var.set(0)
@@ -107,6 +107,12 @@ class View(ttk.Frame):
         self.grzegorz_p_int_var.set(0)
         ttk.Checkbutton(self, text='Grzegorz Polanowski', variable=self.grzegorz_p_int_var, onvalue=1, offvalue=0).grid(
             row=19,
+            column=1)
+
+        self.jacek_s_p_int_var = tk.IntVar()
+        self.jacek_s_p_int_var.set(0)
+        ttk.Checkbutton(self, text='Jacek Salwa', variable=self.jacek_s_p_int_var, onvalue=1, offvalue=0).grid(
+            row=20,
             column=1)
 
 
