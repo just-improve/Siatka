@@ -134,6 +134,11 @@ class View(ttk.Frame):
         self.save_button = ttk.Button(self, text='Losuj', command=self.losuj_i_pokaz_teamy)
         self.save_button.grid(row=2, column=3, padx=10)
 
+        # self.e_black_list_dict = ttk.Entry(self, justify='right')
+        # self.e_black_list_dict.insert(1, "Wieslaw:Piotr Socha.Michal Guzik:Marcin Zapała,Kamil")
+        # self.e_black_list_dict.insert(1, "Wieslaw:Kamil,Piotr Socha.Michal Guzik:Marcin Zapała,Kamil")
+        # self.e_black_list_dict.grid(row=3, column=3)
+
         # set the controller
         self.controller = None
 

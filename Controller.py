@@ -107,23 +107,25 @@ class Controller:
 
                 if len(copy_li_players) == 0:
 
-                    #sekcja wesołego z marcinem - można zrobić metodę która wyeliminuje jakiś zawodników żeby nie grali ze sobą
-                    # wes_mz1 = Player.check_wes_mz(team1)
-                    # wes_mz2 = Player.check_wes_mz(team2)
-                    # if wes_mz1 is True or wes_mz2 is True:
-                    #     equal_teams = False
-                    #     let_attemtp = False
-                    # print('Wesoly z marcinem ')
                     sum1, sum2 = Player.sum_teams(team1, team2)
-                    black_list_dict = {'Wieslaw': ['Kamil', 'Piotr Socha'], 'Michal Guzik': ['Marcin Zapała']}
+                    # black_list_dict = self.convert_entry_string_to_dict(self.view.e_black_list_dict.get())  #self.view.e_black_list_dict.get()
+                    # print('wiaderny0')
+                    # print(black_list_dict)
+                    # print('wiaderny1')
+
+                    # {'Wieslaw': [' Kamil', ' Piotr Socha'], 'Michal Guzik': [' Marcin Zapała', ' Kamil']}
+                    # black_list_dict = {'Wieslaw': ['Piotr Socha','Michal Guzik'], 'Michal Guzik': ['Marcin Zapała', 'Kamil']}
+                    # print(black_list_dict)
+                    # print('wiaderny2')
+
                     # black_list_dict = {}
-                    let_play = Player.check_list_of_black_pairs(team1, team2, black_list_dict)
-                    print(f'let play is {let_play}')
+                    let_play = True #Player.check_list_of_black_pairs(team1, team2, black_list_dict)
+                    # print(f'let play is {let_play}')
 
                     if let_play is False:
                         equal_teams = False
                         let_attemtp = False
-                        print(' mam Kamila nie losujemy dalej')
+                        # print(' mam Kamila nie losujemy dalej')
 
                     elif abs(sum1 - sum2) < int(self.view.e_allow_value.get()):  #self.model.allow_diff_amount:
                         equal_teams = True
@@ -133,12 +135,7 @@ class Controller:
                         equal_teams = False
                         let_attemtp = False
                         print('za duża różnica sił ' + str(abs(sum1 - sum2)))
-        # for x in team1:
-        #     print(x.name)
 
-        # print('')
-        # for x in team2:
-        #     print(x.name)
         self.model.team1 = team1
         self.model.team2 = team2
 
@@ -163,11 +160,22 @@ class Controller:
         teams_joned_str = self.change_teams_to_string()
         self.view.display_teams(teams_joned_str)
 
+    def convert_entry_string_to_dict(self, my_string):
+        # my_string = "key1:value1,value2,value3.key2:value4.key3:value5, value6"
+        my_dict = {}
+        for item in my_string.split("."):
+            key, values = item.split(":")
+            print('pedrycz')
+            print(type(values))
+            print(f'values {values} key {key}')
+            # if isinstance(values, str):   #test
+            #     values = [values]
 
-
-
-
-
-
-
+            if "," in values:
+                print('czubala')
+                print(f'values {values} {key}')
+                values = values.split(",")
+            my_dict[key] = values
+        print(my_dict)
+        return my_dict
 
