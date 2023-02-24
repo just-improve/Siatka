@@ -65,50 +65,49 @@ class Player:
             both_play = True
         return both_play
 
+    # ta metoda działa tak, że jak chcech z kimś zagrać to wybierz tak i losuje
     @staticmethod
-    def check_list_of_black_pairs(team ,team2, dict_black_list_pairs):
-        black_player_in_team = False
-        value_player_in_team = False
-        black_player_in_team2 = False
-        value_player_in_team2 = False
-
-        team = [x.name for x in team]
+    def choose_white_list(team1, team2, dict_black_list_pairs):
+        # Check if any player in team1 cannot play with any player in team2
+        team1 = [x.name for x in team1]
         team2 = [x.name for x in team2]
+        for p1 in team1:
+            for p2 in team2:
+                print('kurek')
+                kurek = dict_black_list_pairs.get(p2, [])
+                if p1 in dict_black_list_pairs.get(p2, []):
+                    print('mistake')
+                    return False
 
-        for value, items in dict_black_list_pairs.items():
+        # Check if any player in team2 cannot play with any player in team1
+        for p2 in team2:
+            for p1 in team1:
+                kurek = dict_black_list_pairs.get(p2, [])
+                if p2 in dict_black_list_pairs.get(p1, []):
+                    print('mistake')
+                    return False
 
-            print(f'\n {value} value player +\n')
-
-            if value in team:
-                value_player_in_team = True
-            if value in team2:
-                value_player_in_team2 = True
-
-            for black_player in items:
-                print(black_player)
-                if black_player in team:
-                    black_player_in_team = True
-                    if value_player_in_team is black_player_in_team:
-                        return False
-                if black_player in team2:
-                    black_player_in_team2 = True
-                    if value_player_in_team2 is black_player_in_team2:
-                        return False
-
-            if value_player_in_team is black_player_in_team:
-                return False
-
-            if value_player_in_team2 is black_player_in_team2:
-                return False
-
-            print(team)
-            print(f'{value_player_in_team} value player in team')
-            print(f'{black_player_in_team} black player in team')
+        # If no invalid pairs are found, return True
         return True
 
     @staticmethod
-    def check_list_of_black_pairs2(team ,team2, dict_black_list_pairs):
-        pass
+    def check_list_of_black_pairs3(team1, team2, dict_black_list_pairs):
+        # Check if any player in team1 cannot play with any player in team2
+        team1 = [x.name for x in team1]
+        team2 = [x.name for x in team2]
+        for p1 in team1:
+            for p1_1 in team1:
+                print('kurek')
+                kurek = dict_black_list_pairs.get(p1_1, [])
+                if p1 in dict_black_list_pairs.get(p1_1, []):
+                    return False
 
+        # Check if any player in team2 cannot play with any player in team1
+        for p2 in team2:
+            for p2_2 in team2:
+                kurek = dict_black_list_pairs.get(p2_2, [])
+                if p2 in dict_black_list_pairs.get(p2_2, []):
+                    return False
 
+        # If no invalid pairs are found, return True
         return True

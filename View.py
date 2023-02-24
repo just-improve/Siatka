@@ -22,35 +22,35 @@ class View(ttk.Frame):
 
         self.gizzu_int_var = tk.IntVar()
         self.gizzu_int_var.set(1)
-        ttk.Checkbutton(self, text='Michał Guzik', variable=self.gizzu_int_var, onvalue=1, offvalue=0).grid(row=2, column=1)
+        ttk.Checkbutton(self, text='Michal', variable=self.gizzu_int_var, onvalue=1, offvalue=0).grid(row=2, column=1)
 
         self.sylwek_k_int_var = tk.IntVar()
         self.sylwek_k_int_var.set(1)
-        ttk.Checkbutton(self, text='Sylwek Kołda', variable=self.sylwek_k_int_var, onvalue=1, offvalue=0).grid(row=3, column=1)
+        ttk.Checkbutton(self, text='Sylwek', variable=self.sylwek_k_int_var, onvalue=1, offvalue=0).grid(row=3, column=1)
 
         self.kamil_int_var = tk.IntVar()
         self.kamil_int_var.set(1)
-        ttk.Checkbutton(self, text='Kamil Michalski', variable=self.kamil_int_var, onvalue=1, offvalue=0).grid(row=4, column=1)
+        ttk.Checkbutton(self, text='Kamil', variable=self.kamil_int_var, onvalue=1, offvalue=0).grid(row=4, column=1)
 
         self.robert_z_int_var = tk.IntVar()
         self.robert_z_int_var.set(1)
-        ttk.Checkbutton(self, text='Robert Zapała', variable=self.robert_z_int_var, onvalue=1, offvalue=0).grid(row=5, column=1)
+        ttk.Checkbutton(self, text='Robert', variable=self.robert_z_int_var, onvalue=1, offvalue=0).grid(row=5, column=1)
 
         self.marcin_z_int_var = tk.IntVar()
         self.marcin_z_int_var.set(1)
-        ttk.Checkbutton(self, text='Marcin Zapała', variable=self.marcin_z_int_var, onvalue=1, offvalue=0).grid(row=6, column=1)
+        ttk.Checkbutton(self, text='Marcin Z', variable=self.marcin_z_int_var, onvalue=1, offvalue=0).grid(row=6, column=1)
 
         self.pawel_z_int_var = tk.IntVar()
         self.pawel_z_int_var.set(1)
-        ttk.Checkbutton(self, text='Paweł Zapała', variable=self.pawel_z_int_var, onvalue=1, offvalue=0).grid(row=7, column=1)
+        ttk.Checkbutton(self, text='Pawel', variable=self.pawel_z_int_var, onvalue=1, offvalue=0).grid(row=7, column=1)
 
         self.krzys_z_int_var = tk.IntVar()
         self.krzys_z_int_var.set(1)
-        ttk.Checkbutton(self, text='Krzysztof Zapała', variable=self.krzys_z_int_var, onvalue=1, offvalue=0).grid(row=8, column=1)
+        ttk.Checkbutton(self, text='Krzys Z', variable=self.krzys_z_int_var, onvalue=1, offvalue=0).grid(row=8, column=1)
 
         self.krzys_w_int_var = tk.IntVar()
         self.krzys_w_int_var.set(0)
-        ttk.Checkbutton(self, text='Krzysztof Wesołowski', variable=self.krzys_w_int_var, onvalue=1, offvalue=0).grid(row=9,
+        ttk.Checkbutton(self, text='Krzys W', variable=self.krzys_w_int_var, onvalue=1, offvalue=0).grid(row=9,
                                                                                                                   column=1)
         self.tomek_int_var = tk.IntVar()
         self.tomek_int_var.set(0)
@@ -60,7 +60,7 @@ class View(ttk.Frame):
 
         self.marcin_j_int_var = tk.IntVar()
         self.marcin_j_int_var.set(0)
-        ttk.Checkbutton(self, text='Marcin Janik', variable=self.marcin_j_int_var, onvalue=1, offvalue=0).grid(
+        ttk.Checkbutton(self, text='Marcin J', variable=self.marcin_j_int_var, onvalue=1, offvalue=0).grid(
             row=11,
             column=1)
 
@@ -72,7 +72,7 @@ class View(ttk.Frame):
 
         self.piotr_s_int_var = tk.IntVar()
         self.piotr_s_int_var.set(1)
-        ttk.Checkbutton(self, text='Piotr Socha', variable=self.piotr_s_int_var, onvalue=1, offvalue=0).grid(
+        ttk.Checkbutton(self, text='Piotr', variable=self.piotr_s_int_var, onvalue=1, offvalue=0).grid(
             row=13,
             column=1)
 
@@ -90,43 +90,43 @@ class View(ttk.Frame):
 
         self.grzegorz_s_int_var = tk.IntVar()
         self.grzegorz_s_int_var.set(0)
-        ttk.Checkbutton(self, text='Grzegorz Sokolowski', variable=self.grzegorz_s_int_var, onvalue=1, offvalue=0).grid(
+        ttk.Checkbutton(self, text='Grzes S', variable=self.grzegorz_s_int_var, onvalue=1, offvalue=0).grid(
             row=16,
             column=1)
 
         self.zbyszek_staniec_int_var = tk.IntVar()
         self.zbyszek_staniec_int_var.set(0)
-        ttk.Checkbutton(self, text='Zbyszek Staniec', variable=self.zbyszek_staniec_int_var, onvalue=1, offvalue=0).grid(
+        ttk.Checkbutton(self, text='Zbyszek S', variable=self.zbyszek_staniec_int_var, onvalue=1, offvalue=0).grid(
             row=17,
             column=1)
 
         self.zbychu_s_int_var = tk.IntVar()
         self.zbychu_s_int_var.set(0)
-        ttk.Checkbutton(self, text='Zbychu Stefanski', variable=self.zbychu_s_int_var, onvalue=1, offvalue=0).grid(
+        ttk.Checkbutton(self, text='Zbychu S', variable=self.zbychu_s_int_var, onvalue=1, offvalue=0).grid(
             row=18,
             column=1)
 
         self.grzegorz_p_int_var = tk.IntVar()
         self.grzegorz_p_int_var.set(0)
-        ttk.Checkbutton(self, text='Grzegorz Polanowski', variable=self.grzegorz_p_int_var, onvalue=1, offvalue=0).grid(
+        ttk.Checkbutton(self, text='Polan', variable=self.grzegorz_p_int_var, onvalue=1, offvalue=0).grid(
             row=19,
             column=1)
 
         self.jacek_s_p_int_var = tk.IntVar()
         self.jacek_s_p_int_var.set(0)
-        ttk.Checkbutton(self, text='Jacek Salwa', variable=self.jacek_s_p_int_var, onvalue=1, offvalue=0).grid(
+        ttk.Checkbutton(self, text='Jacek', variable=self.jacek_s_p_int_var, onvalue=1, offvalue=0).grid(
             row=20,
             column=1)
 
         self.zbyszek_l_int_var = tk.IntVar()
         self.zbyszek_l_int_var.set(0)
-        ttk.Checkbutton(self, text='Zbyszek Lagner', variable=self.zbyszek_l_int_var, onvalue=1, offvalue=0).grid(
+        ttk.Checkbutton(self, text='Zbyszek L', variable=self.zbyszek_l_int_var, onvalue=1, offvalue=0).grid(
             row=21,
             column=1)
 
         self.marcin_s_int_var = tk.IntVar()
         self.marcin_s_int_var.set(0)
-        ttk.Checkbutton(self, text='Marcin Stąpór', variable=self.marcin_s_int_var, onvalue=1, offvalue=0).grid(
+        ttk.Checkbutton(self, text='Marcin S', variable=self.marcin_s_int_var, onvalue=1, offvalue=0).grid(
             row=22,
             column=1)
 
@@ -135,12 +135,22 @@ class View(ttk.Frame):
 
         # save button
         self.save_button = ttk.Button(self, text='Losuj', command=self.losuj_i_pokaz_teamy)
-        self.save_button.grid(row=2, column=3, padx=10)
+        self.save_button.grid(row=2, column=3, padx=10, pady=10)
+
+        ttk.Label(self, text='zaznacz z kim nie chcesz grać').grid(row=3, column=3)
 
         self.e_black_list_dict = ttk.Entry(self, justify='left', width=150)
         self.e_black_list_dict.insert(1, "Wieslaw:Piotr Socha,Przemek.Michal Guzik:Marcin Zapała,Kamil")
         # self.e_black_list_dict.insert(1, "Wieslaw:Kamil,Piotr Socha.Michal Guzik:Marcin Zapała,Kamil")
-        self.e_black_list_dict.grid(row=3, column=3, columnspan=5)
+        self.e_black_list_dict.grid(row=4, column=3, columnspan=5)
+
+        ttk.Label(self, text='zaznacz z kim chcesz grać').grid(row=5, column=3, pady=10)
+
+        self.e_white_list_dict = ttk.Entry(self, justify='left', width=150)
+        self.e_white_list_dict.insert(1, "Wieslaw:Robert Zapała,Sylwek Kołda")
+        # self.e_white_list_dict.insert(1, "Wieslaw:Kamil,Piotr Socha.Michal Guzik:Marcin Zapała,Kamil")
+        self.e_white_list_dict.grid(row=6, column=3, columnspan=5)
+
 
         # set the controller
         self.controller = None
