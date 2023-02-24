@@ -6,6 +6,9 @@ class View(ttk.Frame):
     def __init__(self, parent):
         super().__init__(parent)
 
+        self.parent = parent
+        self.parent.geometry("700x600")
+
         self.rsi_lab1 = ttk.Label(self, text='Akceptowalna różnica sił ')
         self.rsi_lab1.grid(row=0, column=3)
         # self.
@@ -14,35 +17,35 @@ class View(ttk.Frame):
         self.e_allow_value.grid(row=1, column=3)
 
         self.wj_int_var = tk.IntVar()
-        self.wj_int_var.set(0)
+        self.wj_int_var.set(1)
         ttk.Checkbutton(self, text='Wiesław', variable=self.wj_int_var, onvalue=1, offvalue=0).grid(row=1, column=1)
 
         self.gizzu_int_var = tk.IntVar()
-        self.gizzu_int_var.set(0)
+        self.gizzu_int_var.set(1)
         ttk.Checkbutton(self, text='Michał Guzik', variable=self.gizzu_int_var, onvalue=1, offvalue=0).grid(row=2, column=1)
 
         self.sylwek_k_int_var = tk.IntVar()
-        self.sylwek_k_int_var.set(0)
+        self.sylwek_k_int_var.set(1)
         ttk.Checkbutton(self, text='Sylwek Kołda', variable=self.sylwek_k_int_var, onvalue=1, offvalue=0).grid(row=3, column=1)
 
         self.kamil_int_var = tk.IntVar()
-        self.kamil_int_var.set(0)
+        self.kamil_int_var.set(1)
         ttk.Checkbutton(self, text='Kamil Michalski', variable=self.kamil_int_var, onvalue=1, offvalue=0).grid(row=4, column=1)
 
         self.robert_z_int_var = tk.IntVar()
-        self.robert_z_int_var.set(0)
+        self.robert_z_int_var.set(1)
         ttk.Checkbutton(self, text='Robert Zapała', variable=self.robert_z_int_var, onvalue=1, offvalue=0).grid(row=5, column=1)
 
         self.marcin_z_int_var = tk.IntVar()
-        self.marcin_z_int_var.set(0)
+        self.marcin_z_int_var.set(1)
         ttk.Checkbutton(self, text='Marcin Zapała', variable=self.marcin_z_int_var, onvalue=1, offvalue=0).grid(row=6, column=1)
 
         self.pawel_z_int_var = tk.IntVar()
-        self.pawel_z_int_var.set(0)
+        self.pawel_z_int_var.set(1)
         ttk.Checkbutton(self, text='Paweł Zapała', variable=self.pawel_z_int_var, onvalue=1, offvalue=0).grid(row=7, column=1)
 
         self.krzys_z_int_var = tk.IntVar()
-        self.krzys_z_int_var.set(0)
+        self.krzys_z_int_var.set(1)
         ttk.Checkbutton(self, text='Krzysztof Zapała', variable=self.krzys_z_int_var, onvalue=1, offvalue=0).grid(row=8, column=1)
 
         self.krzys_w_int_var = tk.IntVar()
@@ -62,25 +65,25 @@ class View(ttk.Frame):
             column=1)
 
         self.przemek_int_var = tk.IntVar()
-        self.przemek_int_var.set(0)
+        self.przemek_int_var.set(1)
         ttk.Checkbutton(self, text='Przemek', variable=self.przemek_int_var, onvalue=1, offvalue=0).grid(
             row=12,
             column=1)
 
         self.piotr_s_int_var = tk.IntVar()
-        self.piotr_s_int_var.set(0)
+        self.piotr_s_int_var.set(1)
         ttk.Checkbutton(self, text='Piotr Socha', variable=self.piotr_s_int_var, onvalue=1, offvalue=0).grid(
             row=13,
             column=1)
 
         self.albert_int_var = tk.IntVar()
-        self.albert_int_var.set(0)
+        self.albert_int_var.set(1)
         ttk.Checkbutton(self, text='Albert', variable=self.albert_int_var, onvalue=1, offvalue=0).grid(
             row=14,
             column=1)
 
         self.sebastian_int_var = tk.IntVar()
-        self.sebastian_int_var.set(0)
+        self.sebastian_int_var.set(1)
         ttk.Checkbutton(self, text='Sebastian', variable=self.sebastian_int_var, onvalue=1, offvalue=0).grid(
             row=15,
             column=1)
@@ -134,10 +137,10 @@ class View(ttk.Frame):
         self.save_button = ttk.Button(self, text='Losuj', command=self.losuj_i_pokaz_teamy)
         self.save_button.grid(row=2, column=3, padx=10)
 
-        # self.e_black_list_dict = ttk.Entry(self, justify='right')
-        # self.e_black_list_dict.insert(1, "Wieslaw:Piotr Socha.Michal Guzik:Marcin Zapała,Kamil")
+        self.e_black_list_dict = ttk.Entry(self, justify='left', width=150)
+        self.e_black_list_dict.insert(1, "Wieslaw:Piotr Socha,Przemek.Michal Guzik:Marcin Zapała,Kamil")
         # self.e_black_list_dict.insert(1, "Wieslaw:Kamil,Piotr Socha.Michal Guzik:Marcin Zapała,Kamil")
-        # self.e_black_list_dict.grid(row=3, column=3)
+        self.e_black_list_dict.grid(row=3, column=3, columnspan=5)
 
         # set the controller
         self.controller = None

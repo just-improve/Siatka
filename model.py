@@ -105,3 +105,10 @@ class Player:
             print(f'{value_player_in_team} value player in team')
             print(f'{black_player_in_team} black player in team')
         return True
+
+    @staticmethod
+    def check_list_of_black_pairs2(team ,team2, dict_black_list_pairs):
+        pass
+
+
+        return True

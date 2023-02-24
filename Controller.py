@@ -108,19 +108,9 @@ class Controller:
                 if len(copy_li_players) == 0:
 
                     sum1, sum2 = Player.sum_teams(team1, team2)
-                    # black_list_dict = self.convert_entry_string_to_dict(self.view.e_black_list_dict.get())  #self.view.e_black_list_dict.get()
-                    # print('wiaderny0')
-                    # print(black_list_dict)
-                    # print('wiaderny1')
+                    black_list_dict = self.convert_entry_string_to_dict(self.view.e_black_list_dict.get())  #self.view.e_black_list_dict.get()
 
-                    # {'Wieslaw': [' Kamil', ' Piotr Socha'], 'Michal Guzik': [' Marcin Zapała', ' Kamil']}
-                    # black_list_dict = {'Wieslaw': ['Piotr Socha','Michal Guzik'], 'Michal Guzik': ['Marcin Zapała', 'Kamil']}
-                    # print(black_list_dict)
-                    # print('wiaderny2')
-
-                    # black_list_dict = {}
-                    let_play = True #Player.check_list_of_black_pairs(team1, team2, black_list_dict)
-                    # print(f'let play is {let_play}')
+                    let_play = Player.check_list_of_black_pairs2(team1, team2, black_list_dict)
 
                     if let_play is False:
                         equal_teams = False
@@ -152,8 +142,6 @@ class Controller:
             team2_as_str += x.name + '\n'
 
         tream_joned_str = 'Team1 \n' + str(self.model.team1_sum_skills) + '\n' + 'wzrost '+str(self.model.team1_sum_height) + '\n' + '\n'+ team1_as_str + '\n'+ '\n'  + 'Team2 \n' + str(self.model.team2_sum_skills) + '\n' + 'wzrost '+str(self.model.team2_sum_height) + '\n'+ '\n' + team2_as_str
-        # tream_joned_str = 'Team1 \n' + '\n' + team1_as_str + '\n'  + 'Team2 \n' + '\n' + team2_as_str
-
         return tream_joned_str
 
     def display_teams(self):
@@ -161,21 +149,25 @@ class Controller:
         self.view.display_teams(teams_joned_str)
 
     def convert_entry_string_to_dict(self, my_string):
-        # my_string = "key1:value1,value2,value3.key2:value4.key3:value5, value6"
         my_dict = {}
         for item in my_string.split("."):
             key, values = item.split(":")
-            print('pedrycz')
-            print(type(values))
-            print(f'values {values} key {key}')
-            # if isinstance(values, str):   #test
-            #     values = [values]
-
             if "," in values:
-                print('czubala')
-                print(f'values {values} {key}')
                 values = values.split(",")
             my_dict[key] = values
-        print(my_dict)
+        my_dict = self.change_single_str_dict_value_to_list(my_dict)
         return my_dict
+
+
+    def change_single_str_dict_value_to_list(self, dict_to_modify):
+        new_dict = {}
+        # new_dict = {k: [v] for k, v in dict_to_modify.items()}
+
+        for k, v in dict_to_modify.items():
+            if isinstance(v, str):
+                new_dict[k]= [v]
+            else:
+                new_dict[k] = v
+
+        return new_dict
 
