@@ -48,6 +48,8 @@ class Player:
             sum_height_2 += y.height
         return sum_height_1, sum_height_2
 
+    # jeśli byśmy chcieli żeby ktoś się nie losował z kimś to wtedy do tej metody trzeba wstawić liste par zawodników którzy mają nie grać ze sobą
+    # byłaby to lista tupli
     @staticmethod
     def check_wes_mz(team):
         mz = False
@@ -63,5 +65,43 @@ class Player:
             both_play = True
         return both_play
 
+    @staticmethod
+    def check_list_of_black_pairs(team ,team2, dict_black_list_pairs):
+        black_player_in_team = False
+        value_player_in_team = False
+        black_player_in_team2 = False
+        value_player_in_team2 = False
 
+        team = [x.name for x in team]
+        team2 = [x.name for x in team2]
 
+        for value, items in dict_black_list_pairs.items():
+
+            print(f'\n {value} value player +\n')
+
+            if value in team:
+                value_player_in_team = True
+            if value in team2:
+                value_player_in_team2 = True
+
+            for black_player in items:
+                print(black_player)
+                if black_player in team:
+                    black_player_in_team = True
+                    if value_player_in_team is black_player_in_team:
+                        return False
+                if black_player in team2:
+                    black_player_in_team2 = True
+                    if value_player_in_team2 is black_player_in_team2:
+                        return False
+
+            if value_player_in_team is black_player_in_team:
+                return False
+
+            if value_player_in_team2 is black_player_in_team2:
+                return False
+
+            print(team)
+            print(f'{value_player_in_team} value player in team')
+            print(f'{black_player_in_team} black player in team')
+        return True

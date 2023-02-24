@@ -10,7 +10,7 @@ class View(ttk.Frame):
         self.rsi_lab1.grid(row=0, column=3)
         # self.
         self.e_allow_value = ttk.Entry(self, justify='right')
-        self.e_allow_value.insert(1, 50)
+        self.e_allow_value.insert(1, 300)
         self.e_allow_value.grid(row=1, column=3)
 
         self.wj_int_var = tk.IntVar()
@@ -114,6 +114,21 @@ class View(ttk.Frame):
         ttk.Checkbutton(self, text='Jacek Salwa', variable=self.jacek_s_p_int_var, onvalue=1, offvalue=0).grid(
             row=20,
             column=1)
+
+        self.zbyszek_l_int_var = tk.IntVar()
+        self.zbyszek_l_int_var.set(0)
+        ttk.Checkbutton(self, text='Zbyszek Lagner', variable=self.zbyszek_l_int_var, onvalue=1, offvalue=0).grid(
+            row=21,
+            column=1)
+
+        self.marcin_s_int_var = tk.IntVar()
+        self.marcin_s_int_var.set(0)
+        ttk.Checkbutton(self, text='Marcin Stąpór', variable=self.marcin_s_int_var, onvalue=1, offvalue=0).grid(
+            row=22,
+            column=1)
+
+        # marcin_s_int_var
+        # zbyszek_l_int_var
 
         # save button
         self.save_button = ttk.Button(self, text='Losuj', command=self.losuj_i_pokaz_teamy)

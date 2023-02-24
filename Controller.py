@@ -14,16 +14,16 @@ class Controller:
         wj = Player('Wieslaw', 455, 184, self.view.wj_int_var)
         self.model.list_of_players.append(wj)
 
-        gizzu = Player('Gizzu', 450, 180, self.view.gizzu_int_var)
+        gizzu = Player('Michal Guzik', 430, 180, self.view.gizzu_int_var)
         self.model.list_of_players.append(gizzu)
 
-        kamil = Player('Kamil', 340, 195, self.view.kamil_int_var)
+        kamil = Player('Kamil', 260, 195, self.view.kamil_int_var)
         self.model.list_of_players.append(kamil)
 
         sylwek_kolda = Player('Sylwek Kołda', 390, 184, self.view.sylwek_k_int_var)
         self.model.list_of_players.append(sylwek_kolda)
 
-        robert_zapala = Player('Robert Zapała', 405, 182, self.view.robert_z_int_var)
+        robert_zapala = Player('Robert Zapała', 415, 182, self.view.robert_z_int_var)
         self.model.list_of_players.append(robert_zapala)
 
         marcin_zapala = Player('Marcin Zapała', 320, 180, self.view.marcin_z_int_var)
@@ -32,7 +32,7 @@ class Controller:
         pawel_zapala = Player('Paweł Zapała', 350, 173, self.view.pawel_z_int_var)
         self.model.list_of_players.append(pawel_zapala)
 
-        krzysztof_zapala = Player('Krzysztof Zapała', 345, 182, self.view.krzys_z_int_var)
+        krzysztof_zapala = Player('Krzysztof Zapała', 345, 180, self.view.krzys_z_int_var)
         self.model.list_of_players.append(krzysztof_zapala)
 
         krzysztof_wesolowski = Player('Krzysztof Wesołowski', 320, 177, self.view.krzys_w_int_var)
@@ -47,19 +47,19 @@ class Controller:
         przemek = Player('Przemek', 445, 175, self.view.przemek_int_var)
         self.model.list_of_players.append(przemek)
 
-        piotr_socha = Player('Piotr Socha', 390, 178, self.view.piotr_s_int_var)
+        piotr_socha = Player('Piotr Socha', 400, 178, self.view.piotr_s_int_var)
         self.model.list_of_players.append(piotr_socha)
 
-        albert = Player('Albert', 380, 180, self.view.albert_int_var)
+        albert = Player('Albert', 385, 180, self.view.albert_int_var)
         self.model.list_of_players.append(albert)
 
         sebastian = Player('Sebastian', 375, 180, self.view.sebastian_int_var)
         self.model.list_of_players.append(sebastian)
 
-        grzegorz_sokolowski = Player('Grzegorz Sokolowski', 280, 167, self.view.grzegorz_s_int_var)
+        grzegorz_sokolowski = Player('Grzegorz Sokolowski', 290, 167, self.view.grzegorz_s_int_var)
         self.model.list_of_players.append(grzegorz_sokolowski)
 
-        zbyszek_staniec = Player('Zbyszek Staniec', 330, 173, self.view.zbyszek_staniec_int_var)
+        zbyszek_staniec = Player('Zbyszek Staniec', 340, 173, self.view.zbyszek_staniec_int_var)
         self.model.list_of_players.append(zbyszek_staniec)
 
         zbychu_stefanski = Player('Zbychu Stefanski', 395, 180, self.view.zbychu_s_int_var)
@@ -68,8 +68,14 @@ class Controller:
         grzegorz_polanowski = Player('Grzegorz Polanowski', 380, 180, self.view.grzegorz_p_int_var)
         self.model.list_of_players.append(grzegorz_polanowski)
 
-        jacek_salwa = Player('Jacek Salwa', 340, 178, self.view.jacek_s_p_int_var)
+        jacek_salwa = Player('Jacek Salwa', 320, 178, self.view.jacek_s_p_int_var)
         self.model.list_of_players.append(jacek_salwa)
+
+        zbyszek_lagner = Player('Zbyszek Lagner', 410, 180, self.view.zbyszek_l_int_var)
+        self.model.list_of_players.append(zbyszek_lagner)
+
+        marcin_stapor = Player('Marcin Stąpór', 490, 181, self.view.marcin_s_int_var)
+        self.model.list_of_players.append(marcin_stapor)
 
     def create_list_of_checked_players(self):
         for x in self.model.list_of_players:
@@ -101,16 +107,23 @@ class Controller:
 
                 if len(copy_li_players) == 0:
 
-                    wes_mz1 = Player.check_wes_mz(team1)
-                    wes_mz2 = Player.check_wes_mz(team2)
-                    # print(wes_mz1)
-                    # print(wes_mz2)
-
+                    #sekcja wesołego z marcinem - można zrobić metodę która wyeliminuje jakiś zawodników żeby nie grali ze sobą
+                    # wes_mz1 = Player.check_wes_mz(team1)
+                    # wes_mz2 = Player.check_wes_mz(team2)
+                    # if wes_mz1 is True or wes_mz2 is True:
+                    #     equal_teams = False
+                    #     let_attemtp = False
+                    # print('Wesoly z marcinem ')
                     sum1, sum2 = Player.sum_teams(team1, team2)
-                    if wes_mz1 is True or wes_mz2 is True:
+                    black_list_dict = {'Wieslaw': ['Kamil', 'Piotr Socha'], 'Michal Guzik': ['Marcin Zapała']}
+                    # black_list_dict = {}
+                    let_play = Player.check_list_of_black_pairs(team1, team2, black_list_dict)
+                    print(f'let play is {let_play}')
+
+                    if let_play is False:
                         equal_teams = False
                         let_attemtp = False
-                        # print('Wesoly z marcinem ')
+                        print(' mam Kamila nie losujemy dalej')
 
                     elif abs(sum1 - sum2) < int(self.view.e_allow_value.get()):  #self.model.allow_diff_amount:
                         equal_teams = True
@@ -120,12 +133,12 @@ class Controller:
                         equal_teams = False
                         let_attemtp = False
                         print('za duża różnica sił ' + str(abs(sum1 - sum2)))
-        for x in team1:
-            print(x.name)
+        # for x in team1:
+        #     print(x.name)
 
-        print('')
-        for x in team2:
-            print(x.name)
+        # print('')
+        # for x in team2:
+        #     print(x.name)
         self.model.team1 = team1
         self.model.team2 = team2
 
