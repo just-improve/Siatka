@@ -11,16 +11,16 @@ class Controller:
 
     def create_list_of_players(self):
 
-        wj = Player('Wieslaw', 455, 184, self.view.wj_int_var)
+        wj = Player('Wieslaw', 450, 184, self.view.wj_int_var)  #455
         self.model.list_of_players.append(wj)
 
         gizzu = Player('Michal', 430, 180, self.view.gizzu_int_var)
         self.model.list_of_players.append(gizzu)
 
-        kamil = Player('Kamil', 260, 195, self.view.kamil_int_var)
+        kamil = Player('Kamil', 345, 195, self.view.kamil_int_var)
         self.model.list_of_players.append(kamil)
 
-        sylwek_kolda = Player('Sylwek', 390, 184, self.view.sylwek_k_int_var)
+        sylwek_kolda = Player('Sylwek', 350, 184, self.view.sylwek_k_int_var)
         self.model.list_of_players.append(sylwek_kolda)
 
         robert_zapala = Player('Robert', 415, 182, self.view.robert_z_int_var)
@@ -29,7 +29,7 @@ class Controller:
         marcin_zapala = Player('Marcin Z', 320, 180, self.view.marcin_z_int_var)
         self.model.list_of_players.append(marcin_zapala)
 
-        pawel_zapala = Player('Pawel', 350, 173, self.view.pawel_z_int_var)
+        pawel_zapala = Player('Pawel', 355, 173, self.view.pawel_z_int_var)
         self.model.list_of_players.append(pawel_zapala)
 
         krzysztof_zapala = Player('Krzysztof Z', 345, 180, self.view.krzys_z_int_var)
@@ -50,13 +50,13 @@ class Controller:
         piotr_socha = Player('Piotr', 400, 178, self.view.piotr_s_int_var)
         self.model.list_of_players.append(piotr_socha)
 
-        albert = Player('Albert', 385, 180, self.view.albert_int_var)
+        albert = Player('Albert', 375, 180, self.view.albert_int_var)
         self.model.list_of_players.append(albert)
 
-        sebastian = Player('Sebastian', 375, 180, self.view.sebastian_int_var)
+        sebastian = Player('Sebastian', 360, 180, self.view.sebastian_int_var)
         self.model.list_of_players.append(sebastian)
 
-        grzegorz_sokolowski = Player('Grzes S', 290, 167, self.view.grzegorz_s_int_var)
+        grzegorz_sokolowski = Player('Grzes S', 310, 167, self.view.grzegorz_s_int_var)
         self.model.list_of_players.append(grzegorz_sokolowski)
 
         zbyszek_staniec = Player('Zbyszek S', 340, 173, self.view.zbyszek_staniec_int_var)
@@ -76,6 +76,12 @@ class Controller:
 
         marcin_stapor = Player('Marcin S', 490, 181, self.view.marcin_s_int_var)
         self.model.list_of_players.append(marcin_stapor)
+
+        adam = Player('Adam', 350, 177, self.view.adam_int_var)
+        self.model.list_of_players.append(adam)
+
+        jan = Player('Jan', 340, 176, self.view.jan_int_var)
+        self.model.list_of_players.append(jan)
 
     def create_list_of_checked_players(self):
         for x in self.model.list_of_players:

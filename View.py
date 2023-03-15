@@ -130,6 +130,19 @@ class View(ttk.Frame):
             row=22,
             column=1)
 
+        self.adam_int_var = tk.IntVar()
+        self.adam_int_var.set(0)
+        ttk.Checkbutton(self, text='Adam', variable=self.adam_int_var, onvalue=1, offvalue=0).grid(
+            row=23,
+            column=1)
+
+        self.jan_int_var = tk.IntVar()
+        self.jan_int_var.set(0)
+        ttk.Checkbutton(self, text='Jan', variable=self.jan_int_var, onvalue=1, offvalue=0).grid(
+            row=24,
+            column=1)
+
+
         # marcin_s_int_var
         # zbyszek_l_int_var
 
