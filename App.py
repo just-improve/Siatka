@@ -32,6 +32,11 @@ if __name__ == '__main__':
     app = App()
     app.mainloop()
 
+# odznaczanie wszystkiech i zaznaczanie wszystkich
+# ilość zaznaczonych zawodników
+# oddzieleni rezerwowi na dole
+# alfabetycznie według imion lub według numerów na koszulce
+
 #na początku musiałby zczytywać umiejętności z excela do obiektów - to raczej jest możliwe w tych tabelach były by obecności i ewentualnie ilość zapłaconych pieniedzy
 #jeśli ja bym wybrał składy i kliknął zapisz obecność to te składy powinny uzupełnić obecność i automatycznie plik z obecnością powinien być nadpisany
 #można też wprowadzić entry i jak zaczne wpisywać to wyskoczy jakis gość w nowym oknie i wtedy wyskoczy też tam entry i jak wpiszę kwotę to nadpisze się rubryka w excelu
