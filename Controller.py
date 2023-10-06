@@ -11,25 +11,25 @@ class Controller:
 
     def create_list_of_players(self):
 
-        wj = Player('Wieslaw', 450, 184, self.view.wj_int_var)  #455
+        wj = Player('Wieslaw', 440, 184, self.view.wj_int_var)  #455
         self.model.list_of_players.append(wj)
 
-        gizzu = Player('Michal', 430, 180, self.view.gizzu_int_var)
+        gizzu = Player('Michal', 420, 180, self.view.gizzu_int_var)
         self.model.list_of_players.append(gizzu)
 
-        kamil = Player('Kamil', 340, 195, self.view.kamil_int_var)
+        kamil = Player('Kamil', 375, 195, self.view.kamil_int_var)
         self.model.list_of_players.append(kamil)
 
-        sylwek_kolda = Player('Sylwek', 350, 184, self.view.sylwek_k_int_var)
+        sylwek_kolda = Player('Sylwek', 400, 184, self.view.sylwek_k_int_var)
         self.model.list_of_players.append(sylwek_kolda)
 
-        robert_zapala = Player('Robert', 405, 187, self.view.robert_z_int_var)
+        robert_zapala = Player('Robert', 420, 187, self.view.robert_z_int_var)
         self.model.list_of_players.append(robert_zapala)
 
         marcin_zapala = Player('Marcin Z', 320, 180, self.view.marcin_z_int_var)
         self.model.list_of_players.append(marcin_zapala)
 
-        pawel_zapala = Player('Pawel', 355, 180, self.view.pawel_z_int_var)
+        pawel_zapala = Player('Pawel', 410, 180, self.view.pawel_z_int_var)
         self.model.list_of_players.append(pawel_zapala)
 
         krzysztof_zapala = Player('Krzysztof Z', 345, 180, self.view.krzys_z_int_var)
@@ -38,25 +38,25 @@ class Controller:
         krzysztof_wesolowski = Player('Krzysztof W', 320, 177, self.view.krzys_w_int_var)
         self.model.list_of_players.append(krzysztof_wesolowski)
 
-        tomek = Player('Tomek', 400, 174, self.view.tomek_int_var)
+        tomek = Player('Tomek', 380, 174, self.view.tomek_int_var)
         self.model.list_of_players.append(tomek)
 ########################################################################################################
         marcin_janik = Player('Marcin J', 400, 181, self.view.marcin_j_int_var)
         self.model.list_of_players.append(marcin_janik)
 
-        przemek = Player('Przemek', 440, 175, self.view.przemek_int_var)
+        przemek = Player('Przemek', 430, 175, self.view.przemek_int_var)
         self.model.list_of_players.append(przemek)
 
-        piotr_socha = Player('Piotr', 410, 178, self.view.piotr_s_int_var)
+        piotr_socha = Player('Piotr', 430, 178, self.view.piotr_s_int_var)
         self.model.list_of_players.append(piotr_socha)
 
         albert = Player('Albert', 400, 180, self.view.albert_int_var)
         self.model.list_of_players.append(albert)
 
-        sebastian = Player('Sebastian', 375, 180, self.view.sebastian_int_var)
+        sebastian = Player('Sebastian', 380, 180, self.view.sebastian_int_var)
         self.model.list_of_players.append(sebastian)
 
-        grzegorz_sokolowski = Player('Grzes S', 310, 167, self.view.grzegorz_s_int_var)
+        grzegorz_sokolowski = Player('Grzes S', 320, 167, self.view.grzegorz_s_int_var)
         self.model.list_of_players.append(grzegorz_sokolowski)
 
         zbyszek_staniec = Player('Zbyszek S', 340, 173, self.view.zbyszek_staniec_int_var)
@@ -65,7 +65,7 @@ class Controller:
         zbychu_stefanski = Player('Zbychu S', 395, 180, self.view.zbychu_s_int_var)
         self.model.list_of_players.append(zbychu_stefanski)
 
-        grzegorz_polanowski = Player('Polan', 380, 180, self.view.grzegorz_p_int_var)
+        grzegorz_polanowski = Player('Polan', 370, 180, self.view.grzegorz_p_int_var)
         self.model.list_of_players.append(grzegorz_polanowski)
 
         jacek_salwa = Player('Jacek', 320, 178, self.view.jacek_s_p_int_var)
@@ -77,11 +77,14 @@ class Controller:
         marcin_stapor = Player('Marcin S', 480, 184, self.view.marcin_s_int_var)
         self.model.list_of_players.append(marcin_stapor)
 
-        adam = Player('Adam', 355, 179, self.view.adam_int_var)
+        adam = Player('Adam', 350, 179, self.view.adam_int_var)
         self.model.list_of_players.append(adam)
 
-        jan = Player('Jan', 450, 176, self.view.jan_int_var)
-        self.model.list_of_players.append(jan)
+        michal_w = Player('Michal W', 390, 176, self.view.michal_w_int_var)
+        self.model.list_of_players.append(michal_w)
+
+        robert_p = Player('Robert P', 420, 183, self.view.robert_p_w_int_var)
+        self.model.list_of_players.append(robert_p)
 
     def create_list_of_checked_players(self):
         for x in self.model.list_of_players:
@@ -173,6 +176,20 @@ class Controller:
         my_dict = self.change_single_str_dict_value_to_list(my_dict)
         return my_dict
 
+    def get_amount_of_checked_players(self):
+        self.create_list_of_checked_players()
+        len_check_players = str(len(self.model.list_of_checked_players))
+        checked_players_list = ''
+        count = 0
+        for x in self.model.list_of_checked_players:
+            if count < 1:
+                checked_players_list += '   '+x.name
+                count += 1
+            else:
+                checked_players_list += '   '+x.name + '\n'
+                count = 0
+
+        return len_check_players, checked_players_list
 
     def change_single_str_dict_value_to_list(self, dict_to_modify):
         new_dict = {}
