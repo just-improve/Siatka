@@ -7,21 +7,20 @@ class View(ttk.Frame):
         super().__init__(parent)
 
         self.parent = parent
-        self.parent.geometry("700x600")
+        self.parent.geometry("700x800")
         self.rsi_lab1 = ttk.Label(self, text='Akceptowalna różnica sił ')
         self.rsi_lab1.grid(row=0, column=3)
         self.e_allow_value = ttk.Entry(self, justify='right')
         self.e_allow_value.insert(1, 300)
         self.e_allow_value.grid(row=1, column=3)
+
         self.wj_int_var = tk.IntVar()
         self.wj_int_var.set(1)
-        # self.label_amount = ''
-        # self.label_list_players = ''
         ttk.Checkbutton(self, text='Wiesław', variable=self.wj_int_var, onvalue=1, offvalue=0, command=self.check_button_amount_label).grid(row=1, column=1)
 
         self.gizzu_int_var = tk.IntVar()
-        self.gizzu_int_var.set(1)
-        ttk.Checkbutton(self, text='Michal', variable=self.gizzu_int_var, onvalue=1, offvalue=0, command=self.check_button_amount_label).grid(row=2, column=1)
+        self.gizzu_int_var.set(0)
+        ttk.Checkbutton(self, text='Michal G', variable=self.gizzu_int_var, onvalue=1, offvalue=0, command=self.check_button_amount_label).grid(row=2, column=1)
 
         self.sylwek_k_int_var = tk.IntVar()
         self.sylwek_k_int_var.set(1)
@@ -29,7 +28,7 @@ class View(ttk.Frame):
 
         self.robert_z_int_var = tk.IntVar()
         self.robert_z_int_var.set(1)
-        ttk.Checkbutton(self, text='Robert', variable=self.robert_z_int_var, onvalue=1, offvalue=0,command=self.check_button_amount_label).grid(row=5, column=1)
+        ttk.Checkbutton(self, text='Robert Z', variable=self.robert_z_int_var, onvalue=1, offvalue=0,command=self.check_button_amount_label).grid(row=5, column=1)
 
         self.marcin_z_int_var = tk.IntVar()
         self.marcin_z_int_var.set(1)
@@ -40,13 +39,13 @@ class View(ttk.Frame):
         ttk.Checkbutton(self, text='Pawel', variable=self.pawel_z_int_var, onvalue=1, offvalue=0,command=self.check_button_amount_label).grid(row=7, column=1)
 
         self.przemek_int_var = tk.IntVar()
-        self.przemek_int_var.set(1)
+        self.przemek_int_var.set(0)
         ttk.Checkbutton(self, text='Przemek', variable=self.przemek_int_var, onvalue=1, offvalue=0,command=self.check_button_amount_label).grid(
             row=8, column=1)
 
         self.piotr_s_int_var = tk.IntVar()
         self.piotr_s_int_var.set(1)
-        ttk.Checkbutton(self, text='Piotr', variable=self.piotr_s_int_var, onvalue=1, offvalue=0,command=self.check_button_amount_label).grid(
+        ttk.Checkbutton(self, text='Piotrek', variable=self.piotr_s_int_var, onvalue=1, offvalue=0,command=self.check_button_amount_label).grid(
             row=9, column=1)
 
         self.albert_int_var = tk.IntVar()
@@ -60,7 +59,7 @@ class View(ttk.Frame):
             row=11, column=1)
 
         self.zbyszek_staniec_int_var = tk.IntVar()
-        self.zbyszek_staniec_int_var.set(0)
+        self.zbyszek_staniec_int_var.set(1)
         ttk.Checkbutton(self, text='Zbyszek S', variable=self.zbyszek_staniec_int_var, onvalue=1, offvalue=0,command=self.check_button_amount_label).grid(
             row=12, column=1)
 
@@ -98,7 +97,7 @@ class View(ttk.Frame):
             row=18, column=1)
 
         self.sebastian_int_var = tk.IntVar()
-        self.sebastian_int_var.set(1)
+        self.sebastian_int_var.set(0)
         ttk.Checkbutton(self, text='Sebastian', variable=self.sebastian_int_var, onvalue=1, offvalue=0,
                         command=self.check_button_amount_label).grid(
             row=19, column=1)
@@ -121,7 +120,7 @@ class View(ttk.Frame):
             row=21, column=1)
 
         self.kamil_int_var = tk.IntVar()
-        self.kamil_int_var.set(1)
+        self.kamil_int_var.set(0)
         ttk.Checkbutton(self, text='Kamil', variable=self.kamil_int_var, onvalue=1, offvalue=0,command=self.check_button_amount_label).grid(row=22, column=1)
 
 
@@ -138,7 +137,7 @@ class View(ttk.Frame):
             row=24, column=1)
 
         self.krzys_z_int_var = tk.IntVar()
-        self.krzys_z_int_var.set(1)
+        self.krzys_z_int_var.set(0)
         ttk.Checkbutton(self, text='Krzys Z', variable=self.krzys_z_int_var, onvalue=1, offvalue=0,
                         command=self.check_button_amount_label).grid(row=25, column=1)
 
